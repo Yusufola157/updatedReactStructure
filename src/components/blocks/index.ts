@@ -1,1 +1,1 @@
-export * from "./homePageBlock";
+export * from "./homepageblock"

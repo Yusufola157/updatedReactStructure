@@ -4,10 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from "react-router-dom";
-import { element } from './routes/Routes';
+import { element } from './routes/Router';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import Loading from './components/Loading';
+import { Load } from './layout';
 
 const client = new QueryClient();
  
@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={<Load />}>
     <QueryClientProvider client={client}>
       <RouterProvider  router={element}/>
       {/* <App /> */}
