@@ -7,7 +7,8 @@ import { RouterProvider } from "react-router-dom";
 import { element } from './routes/Router';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { Load } from './layout';
+// import { Load } from './layout';
+import Loading from './layout/Loading';
 
 const client = new QueryClient();
  
@@ -16,7 +17,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Suspense fallback={<Load />}>
+    <Suspense fallback={<Loading />}>
     <QueryClientProvider client={client}>
       <RouterProvider  router={element}/>
       {/* <App /> */}

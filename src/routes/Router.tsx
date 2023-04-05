@@ -1,21 +1,20 @@
-import React,{lazy} from "react";
 import { createBrowserRouter } from "react-router-dom";
-import { Boundary } from "../utils/hoc/Boundary";
-import { Dash } from "../layout";
+import { lazy } from "react";
+// import DashLayout from "../layout/dashboardlayout/DashLay";
+import DashLayout from "../layout/dashboardlayout/DashLay";
+// import { Home } from "../components/pages";
+// import { DashbOard } from "../components/blocks";
+import { DashbOard } from "../components/blocks/homepageblock";
+import { Home } from "../components/pages";
 
-// const HomePage = lazy (()=> import(("../pages/HomePage")))
-import { Home } from "../pages/HomePage";
-
-export const element=createBrowserRouter([
+export const element = createBrowserRouter([
     {
         path:"/",
-        element:<Dash/>,
+        element:<DashLayout/>,
         children:[
             {
                 index:true,
-                element:<Home/>,
-                errorElement:<Boundary/>,
-                hasErrorBoundary:true,
+                element:<Home/>
             }
         ]
     }
